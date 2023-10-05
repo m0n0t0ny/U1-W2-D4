@@ -5,7 +5,7 @@
 console.log("🔹 ESERCIZIO 1");
 
 function area(l1, l2) {
-  return l1 + l2;
+  return l1 * l2;
 }
 
 console.log("area:", area(2, 4));
@@ -126,12 +126,16 @@ check3and7(21);
 
 console.log("🔹 ESERCIZIO 7");
 
-function reverseString(str) {
-  var splitString = str.split("");
-  var reverseArray = splitString.reverse();
-  var joinArray = reverseArray.join("");
-  return joinArray;
-}
+// function reverseString(str) {
+//   let magicHappen = str.split("");
+//   magicHappen = magicHappen.reverse();
+//   magicHappen = magicHappen.join("");
+//   return magicHappen;
+// }
+
+const reverseString = function (str) {
+  return str.split("").reverse().join("");
+};
 
 console.log(reverseString("EPICODE"));
 
@@ -139,16 +143,17 @@ console.log(reverseString("EPICODE"));
   Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
   La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
+
 console.log("🔹 ESERCIZIO 8");
 
 const upperFirst = "ciao sono antonio, studente epicode!";
-const words = upperFirst.split(" ");
+const word = upperFirst.split(" ");
 
-for (let i = 0; i < words.length; i++) {
-  words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+for (let i = 0; i < word.length; i++) {
+  word[i] = word[i][0].toUpperCase() + word[i].substring(1);
 }
 
-console.log(words.join(" "));
+console.log(word.join(" "));
 
 /* ESERCIZIO 9
   Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -157,8 +162,34 @@ console.log(words.join(" "));
 
 console.log("🔹 ESERCIZIO 9");
 
+const cutString = function (elloworl) {
+  elloworl = elloworl.slice(1, -1);
+  return elloworl;
+};
+let elloworl = cutString("Hello World");
+console.log(elloworl);
+
 /* ESERCIZIO 10
   Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
+// function giveMeRandom(numX) {
+//   if (typeof numX === "number") {
+//     for (let i = 0; i < numX; i++) {}
+//   } else {
+//     console.log();
+//   }
+// }
+
 console.log("🔹 ESERCIZIO 10");
+
+const giveMeRandom = function (n) {
+  let arrRandom = [];
+  for (let i = 0; i < n - 1; i++) {
+    arrRandom[i] = Math.floor(Math.random() * 10);
+    arrRandom.push(arrRandom[i]);
+  }
+  return arrRandom;
+};
+let array = giveMeRandom(5);
+console.log(array);
