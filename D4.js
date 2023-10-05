@@ -173,23 +173,18 @@ console.log(elloworl);
   Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-// function giveMeRandom(numX) {
-//   if (typeof numX === "number") {
-//     for (let i = 0; i < numX; i++) {}
-//   } else {
-//     console.log();
-//   }
-// }
-
 console.log("🔹 ESERCIZIO 10");
 
 const giveMeRandom = function (n) {
-  let arrRandom = [];
-  for (let i = 0; i < n - 1; i++) {
-    arrRandom[i] = Math.floor(Math.random() * 10);
-    arrRandom.push(arrRandom[i]);
+  if (typeof n === "number") {
+    let yourLuckyNumbers = [];
+    for (let i = 0; i < n - 1; i++) {
+      yourLuckyNumbers[i] = Math.floor(Math.random() * 10);
+      yourLuckyNumbers.push(yourLuckyNumbers[i]);
+    }
+    return yourLuckyNumbers;
   }
-  return arrRandom;
+  return "devi inserire un numero!";
 };
-let array = giveMeRandom(5);
-console.log(array);
+let giveMeLuckyNumbers = giveMeRandom(3);
+console.log(giveMeLuckyNumbers);
